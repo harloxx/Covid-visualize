@@ -5,6 +5,9 @@ import { Bar, Doughnut, Line} from "react-chartjs-2"
 const Contents = () => {
 
     const [confirmedData,setConfirmedData]=useState({})
+    const [quarantinedData,setQuarantinedData]=useState({})
+
+
 
     useEffect(()=>{
       const fetchEvents=async()=>{
@@ -52,6 +55,17 @@ const Contents = () => {
             },
           ]
       });
+      setQuarantinedData({
+        labels,
+        datasets:[
+          {
+            label:"월별 격리자 현황",
+            borderColor:"salmon",
+            fill:true,
+            data:arr.map(a=>a.active)
+          },
+        ]
+    });
     }
 
       fetchEvents()
@@ -67,7 +81,14 @@ const Contents = () => {
               {legend: {display:true, position:"bottom"}}
             } />
           </div>
+          <div>
+            <Line data={quarantinedData} options={
+              {title:{display:true,text:"월별 격리자 현황",fontSize:16}},
+              {legend: {display:true, position:"bottom"}}
+            } />
+          </div>
         </div>
+
       </section>
     )
 }
