@@ -29,7 +29,7 @@ const Contents = () => {
 
           const findItem=acc.find(a=>a.year===year&&a.month===month);
           if(!findItem){
-            acc.push({year,month,date,confirmed,active,death})
+            acc.push({year,month,date,confirmed,active,death,recovered})
           }
           if(findItem&&findItem.data<date){
             findItem.active=active;
@@ -73,6 +73,7 @@ const Contents = () => {
       labels:["확진자","격리해제","사망"],
       datasets:[
         {
+          
           label:"누적 확진, 해제, 사망 비율",
           backgroundColor:["#ff3d67","#059bff","ffc233"],
           borderColor:["#ff3d67","#059bff","ffc233"],
@@ -86,6 +87,8 @@ const Contents = () => {
       fetchEvents();
 
     },[])
+
+
     return (
         <section>
         <h2>국내 코로나 현황</h2>
