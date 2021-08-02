@@ -6,7 +6,7 @@
 .header{
   padding:1rem 2rem;
   background: #3b5998;
-  display:flex;
+  display:flex; 
   justify-content: space-between;
   align-items: center;
 }
