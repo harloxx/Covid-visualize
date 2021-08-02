@@ -5,6 +5,10 @@ import { Bar, Doughnut, Line} from "react-chartjs-2"
 const Contents = () => {
 
     const [confirmedData,setConfirmedData]=useState({})
+    const [quarantinedData,setQuarantinedData]=useState({})
+    const [comparedData,setComparedData]=useState({})
+
+
 
     useEffect(()=>{
       const fetchEvents=async()=>{
@@ -52,11 +56,36 @@ const Contents = () => {
             },
           ]
       });
+      setQuarantinedData({
+        labels,
+        datasets:[
+          {
+            label:"월별 격리자 현황",
+            borderColor:"salmon",
+            fill:false,
+            data:arr.map(a=>a.active)
+          },
+        ]
+    });
+
+    const last=arr[arr.length-1];
+    setComparedData({
+      labels:["확진자","격리해제","사망"],
+      datasets:[
+        {
+          label:"누적 확진, 해제, 사망 비율",
+          backgroundColor:["#ff3d67","#059bff","ffc233"],
+          borderColor:["#ff3d67","#059bff","ffc233"],
+          fill:false,
+          data:[last.confirmed,last.recovered,last.death]
+        },
+      ]
+  });
     }
 
-      fetchEvents()
+      fetchEvents();
 
-    })
+    },[])
     return (
         <section>
         <h2>국내 코로나 현황</h2>
@@ -67,7 +96,20 @@ const Contents = () => {
               {legend: {display:true, position:"bottom"}}
             } />
           </div>
+          <div>
+            <Line data={quarantinedData} options={
+              {title:{display:true,text:"월별 격리자 현황",fontSize:16}},
+              {legend: {display:true, position:"bottom"}}
+            } />
+          </div>
+          <div>
+            <Doughnut data={comparedData} options={
+              {title:{display:true,text:`누적 확진, 해제, 사망 (${new Date().getMonth()+1}월`,fontSize:16}},
+              {legend: {display:true, position:"bottom"}}
+            } />
+          </div>
         </div>
+
       </section>
     )
 }
