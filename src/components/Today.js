@@ -9,7 +9,6 @@ const Today=()=>{
     useEffect(()=>{
         setTodayData(null);
         const fetchToday = async () => {
-            
             const response = await axios.get("https://api.covid19api.com/total/dayone/country/kr");
             setTodayData(response.data);
         }
@@ -17,16 +16,20 @@ const Today=()=>{
         },[]);
 
     if (!todayData) return null;
+    let today = new Date();  
+    if (today==todayData.Date)
+        console.log("right")
+
+    
     return(
         <section>
-          <h1>국내 누적 확진자</h1>
-            <ul>
-                {todayData.map(user => (
-                  <li key={user.id}>
-                    {user.Confirmed} ({user.Deaths})
-                  </li>
-                ))}
-              </ul>
+            {todayData.map(datee=>(
+                (datee.Date=="2021-07-05T00:00:00Z") ? (
+                    <div key={datee.Date}>
+                        <p>title:{datee.Deaths}</p>
+                    </div>)
+                :null
+            ))}
         </section>
     );
 
