@@ -6,9 +6,7 @@ const Header = () => {
         <header className="header">
         <h1>Covid-19</h1>
         <div className="Navi">
-          <a className="Navs">
-          MONTHLY
-          </a>
+          <a className="Navs" href='/month'>MONTHLY</a>
           <a className="Navs" href='/quar'>QUARANTINE</a>
           <a className="Navs" href="/total">TOTAL</a>
         </div>
