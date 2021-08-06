@@ -103,15 +103,19 @@ const Total=()=>{
   
   
 
-    const nowMonth=year+'년 '+month+'월 '+date+'일 '+'국내 누적 확진자 현황 입니다'
+  const nowMonth=year+'년 '+month+'월 '+date+'일 '+'국내 누적 확진자 현황 입니다'
   const monthConfirmed=month+'월 1일 기준 누적 확진자 수는 '
   const monthRecovered=month+'월 1일 기준 누적 격리해제자 수는 '
   const monthDeath=month+'월 1일 기준 누적 사망자 수는 '
   const nowNum=month+'월 '+date+'일, 금일 날짜 기준 격리자 수는 '
-    if (!todayData) return null;
+
+
+
+  if (!todayData) return null;
     
     
         return (
+          <div className="mastHome">
             <section>
             <div className="contents">
               <div>
@@ -144,6 +148,7 @@ const Total=()=>{
             ))}
     
           </section>
+          </div>
         )
 
 }

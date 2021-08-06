@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 import Total from './Total'
 const Header = () => {
     return (
+
+      
+        <div className="menubar">
         <header className="header">
+      
         <h1>Covid-19</h1>
         <div className="Navi">
           <a className="Navs" href='/month'>MONTHLY</a>
@@ -14,7 +18,13 @@ const Header = () => {
           <option>KOREA</option>
           <option>WORLD</option>
         </select>
+
       </header>
+      
+      
+
+      </div>
+      
     )
 }
 

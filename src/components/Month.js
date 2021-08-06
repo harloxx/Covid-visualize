@@ -113,7 +113,9 @@ const Month=()=>{
     if (!todayData) return null;
 
     return (
+      <div className="mastHome">
         <section>
+          
           <h1>국내 누적 확진자</h1>
             <div className="contents">
             <div>
@@ -132,7 +134,9 @@ const Month=()=>{
                     </div>)
                 :null        
             ))}
+            
         </section>
+        </div>
       )
 }
 

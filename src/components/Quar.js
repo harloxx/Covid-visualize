@@ -111,6 +111,7 @@ const Quar=()=>{
 
     
         return (
+          <div className="mastHome">
             <section>
               <h1>국내 누적 격리자</h1>
             <div className="contents">
@@ -136,6 +137,7 @@ const Quar=()=>{
                 :null        
             ))}
           </section>
+          </div>
         )
 
 }
