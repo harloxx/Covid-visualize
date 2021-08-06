@@ -62,6 +62,7 @@ const Contents = () => {
           {
             label:"월별 격리자 현황",
             borderColor:"salmon",
+            
             fill:false,
             data:arr.map(a=>a.active)
           },
