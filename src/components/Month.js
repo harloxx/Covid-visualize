@@ -55,8 +55,7 @@ const Month=()=>{
           {
             label:"국내 누적 확진자",
             backgroundColor:"salmon",
-            fill:true,
-            
+            fill:true,   
             data:arr.map(a=>a.confirmed)
           },
         ]
@@ -119,6 +118,7 @@ const Month=()=>{
           
           <h1>국내 누적 확진자</h1>
             <div className="contents">
+            
             <div>
               <Bar data={confirmedData} options={
                 {title:{display:true,text:"누적 확진자 추이",fontSize:16}},

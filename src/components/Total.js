@@ -48,8 +48,8 @@ const Total=()=>{
           {
             
             label:"누적 확진, 해제, 사망 비율",
-            backgroundColor:["#ff3d67","#059bff","ffc233"],
-            borderColor:["#ff3d67","#059bff","ffc233"],
+            backgroundColor:["#94b4b3","#43a49d","darkslategrey"],
+            borderColor:["#94b4b3","#43a49d","darkslategrey"],
             fill:false,
             data:[last.confirmed,last.recovered,last.death]
           },
