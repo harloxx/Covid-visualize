@@ -12,7 +12,6 @@ export default () => (
     <Router>
     <Route path="/" component={Header}></Route>
     <Route exact path='/a' component={Contents}/>
-    <Route path='/today' component={Today}/>
     <Route path='/quar' component={Quar}/>
     <Route path='/month' component={Month}/>
     <Route path='/total' component={Total}/>

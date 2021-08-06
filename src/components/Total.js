@@ -1,10 +1,6 @@
-
-import "./css/total.css";
-import arr from "./Contents.js"
-
 import { useState, useEffect} from 'react'
 import axios from 'axios'
-import { Bar, Doughnut, Line} from "react-chartjs-2"
+import { Doughnut} from "react-chartjs-2"
 
 const Total=()=>{
     const [comparedData,setComparedData]=useState({})
@@ -71,25 +67,25 @@ const Total=()=>{
     let month = today.getMonth() + 1;  // 월
     let date = today.getDate()-1;  // 날짜
     if (date<=2){
-      if (month==1){
+      if (month===1){
           year=year-1;
           month=12
-          if(date==1) date=30
+          if(date===1) date=30
           else date=31
       }
-      else if (month==5||month==7||month==9||month==11){
+      else if (month===5||month===7||month===9||month===11){
           month=month-1
-          if(date==1) date=30
+          if(date===1) date=30
           else date=31
       }
-      else if(month==3){
+      else if(month===3){
           month=month-1
-          if(date==1) date=27
+          if(date===1) date=27
           else date=28
       }
       else{
           month=month-1
-          if(date==1) date=30
+          if(date===1) date=30
           else date=31
       }
   }    
