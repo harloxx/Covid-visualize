@@ -5,7 +5,6 @@ import Contents from './Contents';
 import Total from './Total';
 import Month from './Month';
 import Quar from './Quar';
-import Today from './Today'
 import '../App.css';
 
 export default () => (

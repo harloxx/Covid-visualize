@@ -28,8 +28,18 @@
   align-items: center;
 }
 
+.box{
+  width:40%;
+  height:30%;
+  right: 50%;
+  border:1px solid black;
+  border-radius:3rem;
+  background-color: orange;
+}
+
 .header h1{
   color: #fff;
+  
 }
 
 .Navi {
@@ -65,6 +75,7 @@ section{
 }
 
 .contents{
+  text-align: center;
   padding-left: 18%;
   padding-right: 18%;
   grid-template-columns: 1fr 1fr;

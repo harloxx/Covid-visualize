@@ -118,12 +118,10 @@ const Total=()=>{
           <div className="mastHome">
             <section>
             <div className="contents">
-              <div>
                 <Doughnut data={comparedData} options={
-                  {title:{display:true,text:`누적 확진, 해제, 사망 (${new Date().getMonth()+1}월`,fontSize:16}},
+                  {title:{display:true,text:`누적 확진, 해제, 사망 (${new Date().getMonth()+1}월`,fontSize:15}},
                   {legend: {display:true, position:"bottom"}}
                 } />
-              </div>
             </div>
             {todayData.map(datee=>(
                 (datee.Date==firstFinal) ? (

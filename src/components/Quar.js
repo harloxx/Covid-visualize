@@ -103,8 +103,8 @@ const Quar=()=>{
   const firstFinal=String(year)+'-'+String(month)+'-'+'01T00:00:00Z'
   const final=String(year)+'-'+String(month)+'-'+String(date)+'T00:00:00Z'
   const nowMonth=year+'년 '+month+'월 '+date+'일 '+'국내 월별 격리자 현황 입니다'
-  const monthNum=month+'월 1일 기준 격리자 수는 '
-  const nowNum=month+'월 '+date+'일, 금일 날짜 기준 격리자 수는 '
+  const monthNum=month+'월 01일 기준 격리자 수는 '
+  const nowNum=month+'월 0'+date+'일, 금일 날짜 기준 누적격리자 수는 '
   
   
   if (!todayData) return null;
